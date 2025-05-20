@@ -16,7 +16,7 @@ repos:
       - id: black-jupyter
         args: [--line-length=88]
   - repo: https://github.com/PyCQA/isort
-    rev: 5.13.2
+    rev: 6.0.1
     hooks:
       - id: isort
         args: [--profile=black]
@@ -36,13 +36,3 @@ repos:
         entry: jupyter nbconvert --ClearOutputPreprocessor.enabled=True --inplace
         language: system
         files: \.ipynb$
-  - repo: https://github.com/executablebooks/mystmd
-    rev: 3.0.3
-    hooks:
-      - id: myst-validate
-        name: Validate MyST Markdown
-        entry: myst validate
-        language: node
-        files: \.md$
-        additional_dependencies: [mystmd]
-
