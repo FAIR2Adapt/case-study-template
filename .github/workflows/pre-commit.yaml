@@ -35,7 +35,7 @@ jobs:
       - name: Install custom packages and pre-commit
         shell: micromamba-shell {0}
         run: |
-          pip install pre-commit git+https://github.com/IAOCEA/xhealpixify.git git+https://github.com/xarray-contrib/xdggs.git
+          pip install pre-commit nblint
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
           npm install -g mystmd  # Ensure mystmd for validation
 

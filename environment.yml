@@ -14,9 +14,9 @@ dependencies:
   - ruff
   - black
   - isort
-  - nblint
   - nbconvert
   - pytest
   - pytest-cov
   - jupyter
   - mystmd
+  - nodejs=18  # For mystmd CLI
