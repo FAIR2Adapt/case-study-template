@@ -1,0 +1,22 @@
+name: myenv
+channels:
+  - conda-forge
+  - nodefaults
+dependencies:
+  - python=3.11
+  - numpy
+  - xarray
+  - zarr
+  - s3fs
+  - h5netcdf
+  - cftime
+  - nbqa
+  - ruff
+  - black
+  - isort
+  - nblint
+  - nbconvert
+  - pytest
+  - pytest-cov
+  - jupyter
+  - mystmd
