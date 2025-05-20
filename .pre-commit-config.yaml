@@ -24,7 +24,7 @@ repos:
     rev: 1.9.0
     hooks:
       - id: nbqa-ruff
-        args: [--fix, --exit-non-zero-on-fix]
+        args: [--fix, --exit-non-zero-on-fix, --extend-ignore=E402]
       - id: nbqa-black
         args: [--line-length=88]
       - id: nbqa-isort
