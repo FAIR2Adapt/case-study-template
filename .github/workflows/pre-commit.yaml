@@ -37,7 +37,7 @@ jobs:
         run: |
           pip install pre-commit nblint
           if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-          npm install -g mystmd  # Ensure mystmd for validation
+          if ! command -v myst &> /dev/null; then npm install -g mystmd; fi  # Ensure mystmd for validation
 
       - name: Cache pre-commit
         uses: actions/cache@v4
