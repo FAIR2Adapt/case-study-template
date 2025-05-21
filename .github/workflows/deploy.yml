@@ -3,9 +3,10 @@
 
 name: MyST GitHub Pages Deploy
 on:
-  push:
-    # Runs on pushes targeting the default branch
-    branches: [main]
+  workflow_run:
+    workflows: ["Lint"]
+    types:
+      - completed
 env:
   # `BASE_URL` determines the website is served from, including CSS & JS assets
   # You may need to change this to `BASE_URL: ''`
@@ -23,6 +24,7 @@ concurrency:
   cancel-in-progress: false
 jobs:
   deploy:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
